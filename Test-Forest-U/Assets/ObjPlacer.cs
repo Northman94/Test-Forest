@@ -16,7 +16,7 @@ public class ObjPlacer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             RaycastHit rayHitInfo;
 
@@ -31,15 +31,12 @@ public class ObjPlacer : MonoBehaviour
 
 
 
-         void ObjPlacement (Vector3 nearPoint)
+        private void ObjPlacement (Vector3 clickPoint)
         {
-            var finalPosition = grid.GetNearestPointOnGreed(nearPoint);
+            var finalPosition = grid.GetNearestPointOnGreed(clickPoint);
 
-            GameObject.CreatePrimitive(PrimitiveType.Cube).transform.position = finalPosition;
+        GameObject.CreatePrimitive(PrimitiveType.Cube).transform.position = finalPosition;
         }
-
-
-   
 
 
 }
